@@ -1,0 +1,66 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int i,a,c;
+
+int main()
+{
+    printf(" Dificuldades: \n\n 0 - Muito fácil (1-50) \n 1 - Fácil (0 - 100) \n 2 - Médio (0-500) \n 3 - Difícil (0-1000) \n 4 - Hardcore mermão (0-10000) \n\n Escolha uma das opções de dificuldade de 0 a 4: ");
+    scanf("%d", &a);
+
+    if (a==0)
+    {
+        srand( (unsigned)time(NULL) );
+        a = rand() %50;
+    }
+
+    if (a==1)
+    {
+        srand( (unsigned)time(NULL) );
+        a = rand() %100;
+    }
+
+    if (a==2)
+    {
+        srand( (unsigned)time(NULL) );
+        a = rand() %500;
+    }
+
+    if (a==3)
+    {
+        srand( (unsigned)time(NULL) );
+        a = rand() %1000;
+    }
+
+    if (a==4)
+    {
+        srand( (unsigned)time(NULL) );
+        a = rand() %10000;
+    }
+
+    while (c != a) {
+
+    printf("Digite um valor para jogar: " );
+    scanf("%d", &c);
+    i++;
+
+    if (c>a)
+    {
+        printf("O valor digitado é maior!\n");
+    }
+
+    if (c<a)
+    {
+        printf("O valor digitado é menor!\n");
+    }
+
+    if (c==a)
+    {
+        printf("Parabéns, você acertou!\n");
+        printf("A quantidade de jogadas: %d\n",i);
+    }
+
+    }
+
+}
