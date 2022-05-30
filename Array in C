@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include<conio.h>
+
+int main()
+{
+    int numeros[4];
+    int i;
+    
+    //Armazenando valores no Array
+    
+    for (i=0;i<4;i++)
+    {
+        printf("Digite o %d valor: \n", i + 1);
+        scanf("%d", &numeros[i]);
+    }
+    
+    //Mostrando os valores da Array Invertido
+    
+    for (i=3;i>=0;i--)
+    {
+        printf("Valor %d = %d\n", i + 1, numeros[i]);
+    }
+    
+    return 0;
+}
