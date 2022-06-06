@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <curses.h>
+
+#define TAM 2
+
+struct inscricao // definição dos atributos pda struct
+{
+	char nome[30];
+	char curso[20];
+	int ano;
+	float nota;
+};
+
+int main(void)
+{
+	int contador;
+	struct inscricao vestibular[TAM];
+	for (contador = 0; contador < TAM; contador++)
+	{
+	printf("\nColeta dos dados %d \n \n", contador + 1);
+
+	printf("Informe o nome do candidato: ");
+	scanf("%s", &vestibular[contador].nome);
+
+	printf("Informe o curso desejado: ");
+	scanf("%s", &vestibular[contador].curso);
+
+	printf("Informe o ano atual: ");
+	scanf("%d", &vestibular[contador].ano);
+
+	printf("Informe a nota: ");
+	scanf("%f", &vestibular[contador].nota);
+	}
+
+	for (contador=0;contador<TAM;contador++)
+	{
+	printf("\n\n --------- Lendo os dados da struct ---------\n\n");
+	printf("O nome do candidato: %s \n", vestibular[contador].nome);
+	printf("O curso desejado: %s \n", vestibular[contador].curso);
+	printf("O ano atual: %d \n", vestibular[contador].ano);
+	printf("A nota: %f \n", vestibular[contador].nota);
+	}
+
+}
