@@ -1,0 +1,53 @@
+/******************************************************************************
+
+25 - Utilizando uma estrutura, faça um programa que permita a entrada de nome, endereço e telefone
+de 5 pessoas e os imprima em ordem alfabética.
+
+* Não consegui colocar em ordem alfabética os nomes.
+
+*******************************************************************************/
+#include <stdio.h>
+
+
+#define TAM 5
+
+struct dados
+{
+    char nome[30];
+    char endereco[40];
+    char telefone[10];
+};
+
+int main()
+{
+    int contador;
+    struct dados inscricao[TAM];
+    
+    for (contador = 0; contador < TAM; contador++)
+    
+	{
+	    
+	printf("\nColeta dos dados %d \n \n", contador + 1);
+
+	printf("Informe o nome: ");
+	scanf("%s", &inscricao[contador].nome);
+
+	printf("Informe o endereço: ");
+	scanf("%s", &inscricao[contador].endereco);
+
+	printf("Informe o telefone: ");
+	scanf("%s", &inscricao[contador].telefone);
+	
+	}
+	
+	for (contador=0;contador<TAM;contador++)
+	{
+	printf("\n\n --------- Lendo os dados da struct ---------\n\n");
+	printf("O nome: %s \n", inscricao[contador].nome);
+	printf("O curso desejado: %s \n", inscricao[contador].endereco);
+	printf("O ano atual: %s \n", inscricao[contador].telefone);
+
+	}
+}
+
+
