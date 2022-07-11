@@ -1,4 +1,4 @@
-# Initial-Projects
+# Initial-Projects in C
 
 Some projects that I have developed in my university.
 
