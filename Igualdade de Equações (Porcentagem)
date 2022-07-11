@@ -1,0 +1,40 @@
+/* Dado um país A, com 5.000.000 de habitantes e uma taxa de natalidade de 3% ao ano, e um país B com 7.000.000 de habitantes 
+e uma taxa de natalidade de 2% ao ano, escreva um programa, que imprima o tempo necessário para que a população do país A 
+ultrapasse a população do país B. 
+*População e taxa de natalidade são variáveis. */
+
+#include <stdio.h>
+
+int anos = 0;
+float a,b,c,d;
+
+int main()
+{
+   printf("População de A: ");
+   scanf("%f", &a);
+   
+   printf("População de B: ");
+   scanf("%f", &b);
+   
+   printf("Taxa de Natalidade de A (em porcentagem): ");
+   scanf("%f", &c);
+   
+   printf("Taxa de Natalidade de B (em porcentagem): ");
+   scanf("%f", &d);
+   
+   c = c * 0.01;
+   d = d * 0.01;
+   
+   while (a<b)
+    {
+        a = a*c + a;
+        b = b*d + b;
+        anos = anos + 1;
+    }
+    
+    printf("Anos: %d", anos);
+    return 0;
+}
+
+
+
