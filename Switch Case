@@ -1,0 +1,47 @@
+/* 21. Exercício: fazer um programa em "C" que solicita o total gasto pelo cliente de uma loja,
+imprime as opções de pagamento, solicita a opção desejada e imprime o valor total das prestações 
+(se houverem).
+1) Opção: a vista com 10% de desconto
+2) Opção: em duas vezes (preço da etiqueta)
+3) Opção: de 3 até 10 vezes com 3% de juros ao mês (somente para compras acima de R$ $100,00).*/
+
+#include <stdio.h>
+
+float a,total;
+int b, qtde;
+int resp = 1;
+
+int main()
+{
+    while (resp == 1)
+    {
+    
+    printf("Informe o total gasto pelo cliente: ");
+    scanf("%f", &a);
+    
+    printf("\nOpções de pagamento: \n\n Opção 1 - a vista com 10 porcento de desconto \n Opção 2 - em duas vezes (preço da etiqueta) \n Opção 3 - de 3 até 10 vezes com 3 porcento de juros ao mês (somente para compras acima de R$ $100,00) \n Digite o número da opção que deseja:");
+    scanf("%d", &b);
+    
+    switch (b)
+    {
+        case 1:
+        total = a-a*0.10;
+        printf("Valor total: %.2f ", total);
+        break;
+        
+        case 2:
+        total = a/2;
+        printf("Duas prestações de: %.2f", total);
+        break;
+        
+        case 3:
+        printf("Quantidade de prestações: ");
+        scanf("%d", &qtde);
+        total = a/qtde + a/qtde*0.03;
+        printf("O valor da prestações é de: %.2f", total);
+    }
+        printf("\nDeseja continuar? Se sim, digite 1 para sim ou 2 para não \n");
+        scanf("%d",&resp);
+    }
+}
+    
