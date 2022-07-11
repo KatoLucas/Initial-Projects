@@ -1,0 +1,55 @@
+/******************************************************************************
+
+24 -  Fazer uma rotina em "C" que recebe um vetor de números inteiros como parâmetro onde todos os
+valores exceto o último são positivos e devolve: - a média dos valores do vetor; - o menor valor do vetor
+(sem considerar o último) - o maior valor do vetor.
+
+* Nesse exercício, não adotei o último número sendo negativo.
+
+*******************************************************************************/
+#include <stdio.h>
+
+int media, maior, menor, ver;
+
+
+// Criando a rotina para verificar se qual o valor maior, o menor e a calcular a média.
+int verificacao (int numeros[10])
+{
+      int i = 0;
+      for (i=0;i<10;i++)
+      {
+         media = media + numeros[i]; 
+         if (numeros[i] > numeros[i - 1])
+         {
+             maior = numeros[i];
+         }
+         
+         if (numeros[i] < numeros[i - 1])
+         {
+             menor = numeros[i];
+         }
+      }
+      
+          media = media/10;
+}
+
+int main()
+{
+    //criando o vetor e contador
+    int numeros[10];
+    int i;
+    
+     //Armazenando valores no Array
+     for (i=0;i<10;i++)
+     {
+         printf("Digite o %d valor: \n", i + 1);
+         scanf("%d", &numeros[i]);
+     }
+     
+     ver = verificacao(numeros);
+     
+    printf("média: %d \n", media);
+    printf("maior: %d \n", maior);
+    printf("menor: %d \n", menor);
+     
+}
